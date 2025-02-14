@@ -1,8 +1,9 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
-    color: white;
+    /* background: linear-gradient(to right, #1c1c1c, #3a3a3a); */
+    color: black;
+    background-color: white;
     overflow-x: hidden;
 }
 
@@ -265,7 +266,11 @@ footer {
   .flip-card-back {
     color: white;
     transform: rotateY(180deg);
+    background-color: rgba(58, 49, 49, 0.632);
+    border-radius: 5px;
+    
   }
+  
 
 .info1{
     height: 490px;
@@ -277,26 +282,27 @@ footer {
 }
 
 .logoimage{
-    height: 45px;
-}
-
-.logoimage2{
-    height: 30px;
-    margin-bottom: 8px;
-    margin-top: 20px;
+    height: 65px;
+    margin-left: 50px;
 }
 
 .navbar{
     display: flex;
-    gap: 42%;
-    margin-left: 30px;
-    height: 70px;
+    gap: 50%;
+    height: 50px;
 }
 
 .navbarOption{
     display: flex;
-    gap: 50px;
+    gap: 70px;
     font-size: large;
+    list-style: none;
+
+}
+
+.navbarOption a{
+    text-decoration: none;
+    color: white;
 }
 
 .navbarContent{
@@ -306,7 +312,106 @@ footer {
 }
 
 .nav{
-    background-color: rgba(58, 49, 49, 0.581);
+    background-color: rgba(58, 49, 49, 0.632);
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: 50px;
+    width: 80px;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+.dark-mode .navbar {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .toggle-btn {
+    color: #ffcc00;
+}
+
+.contact {
+    padding: 50px 20px;
+    background: #111;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact h2{
+    margin-bottom: 20px;
+}
+
+.contact input,
+.contact textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact button {
+    margin-top: 10px;
+    background: #00c3ff;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background: #0091cc;
+}
+
+.contact h2{
+    text-align: center;
+}
+
+.toggle-btn{
+    margin-left: -28px;
+}
+
+.padding{
+    padding-left: 20px;
+    padding-right: 20px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
 }

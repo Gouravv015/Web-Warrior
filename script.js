@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const fadeElements = document.querySelectorAll(".fade-in");
 
-    // Scroll-triggered fade-in effect
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fadeElements.forEach(el => observer.observe(el));
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", (e) => {
             e.preventDefault();
@@ -23,8 +21,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Button interaction
     document.querySelector(".cta").addEventListener("click", () => {
         window.scrollTo({ top: document.querySelector(".info").offsetTop, behavior: "smooth" });
     });
+});
+
+
+const toggleBtn = document.getElementById("darkModeToggle");
+const body = document.body;
+
+if (localStorage.getItem("darkMode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleBtn.innerHTML = `<i class="fa-solid fa-moon" style="color: #ffffff;"></i>`; 
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+        toggleBtn.innerHTML = `<i class="fa-solid fa-moon" style="color: #ffffff;"></i>`; 
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+        toggleBtn.innerHTML = "🌞"; 
+    }
 });
